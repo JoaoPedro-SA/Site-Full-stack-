@@ -1,15 +1,70 @@
-const nome = document.querySelector('#name');
-const email = document.querySelector('#email');
-const senha = document.querySelector('#password');
-const CPF_CNPJ = document.querySelector('#cpf_cnpj');
-const dateN = document.querySelector('#birthday');
+let nome = document.querySelector('#name');
+let email = document.querySelector('#email');
+let senha = document.querySelector('#password');
+let CPF_CNPJ = document.querySelector('#cpf_cnpj');
+let dateN = document.querySelector('#birthday');
 const termo = document.querySelector('#terms');
 let button_salva = document.querySelector('.button');
 
 
 
+valida_valor_nulo = (valor) => {
+    if (valor === null || valor === undefined || valor === '') {
+         alert(`preencher todos os campos`);
+         throw new Error(`preencher todos os campos`);
+    }
+}
+
+
+
+
+valida_cpf = (cpf) => {
+    let novo_cpf = '';
+    for ( let i = 0; i < cpf.length; i ++){
+              if (cpf[i] !== '.' && cpf[i] !== '-'){
+                   novo_cpf += cpf[i]; 
+              }    
+    }
+    return novo_cpf
+}
+
+valida_email = (email) => {
+    let e_um_email = false; 
+      for (let i = 0; i < email.length;i++){
+          if(email[i] === '@'){
+          e_um_email = true;
+          break
+     } 
+     }
+     if (e_um_email === false){
+          alert(`colocar um email valido`)
+          throw new Error(`preencher todos os campos`);
+     }
+}
+
+valida_dataN = (data) => {
+    let idade = data[0] + data[1] + data[2] + data[3];
+    if (parseInt(idade) > 120){
+         alert(`idade invalida vc ja estar morto 💀
+              imposivel vc ter ${2024 - idade} anos`);
+         throw new Error(`idade invalida`);
+    }
+}
+
 
 button_salva.addEventListener('click', async () => {
+
+    valida_valor_nulo(nome.value);
+    valida_valor_nulo(email.value);
+    valida_valor_nulo(senha.value);
+    valida_valor_nulo(CPF_CNPJ.value);
+    valida_valor_nulo(dateN.value);
+
+    CPF_CNPJ.value = await valida_cpf(CPF_CNPJ.value);
+
+    valida_email(email.value);
+    valida_dataN(dateN.value);
+
     
 if (!termo.checked){
     alert('VC TEM QUE ACEITA OS TERMOS PARA CONTINUA');
