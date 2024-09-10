@@ -42,12 +42,12 @@ valida_email = (email) => {
      }
 }
 
-valida_dataN = (data) => {
-    let idade = data[0] + data[1] + data[2] + data[3];
-    if (parseInt(idade) > 120){
-         alert(`idade invalida vc ja estar morto 💀
-              imposivel vc ter ${2024 - idade} anos`);
-         throw new Error(`idade invalida`);
+const valida_dataN = (data) => {
+    let anoNascimento = data.slice(0, 4); // Extrai os primeiros 4 caracteres
+    let idade = 2024 - parseInt(anoNascimento); // Converte para número e calcula a idade
+    if (idade > 120) {
+        alert(`Idade inválida, você já estaria morto 💀. Impossível ter ${idade} anos.`);
+        throw new Error("Idade inválida");
     }
 }
 
