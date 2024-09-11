@@ -25,7 +25,7 @@ nav{
      border-radius: 20px;
      width:100px;
      text-align: center;
-     font-size: 17px;
+     font-size: 1rem;
 }
 
 .link:hover{
@@ -53,14 +53,19 @@ nav{
      width: 10rem;
      background-color: rgba(127, 255, 212, 0);
      font-weight: 700;
-     font-size: 18px;
+     font-size: 1.5rem;
      outline: 2px solid rgb(0, 0, 0);
 }
 
 .button:hover{
      transition: 1.5s;
      background-color: red;
-     font-size: 21px;
+     font-size: 2rem;
      outline: 2px solid rgba(0, 0, 0, 0);
      border-radius: 20px;
+}
+
+
+.ti_h1{
+     font-size:3rem;
 }

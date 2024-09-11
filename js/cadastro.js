@@ -49,6 +49,10 @@ const valida_dataN = (data) => {
         alert(`Idade inválida, você já estaria morto 💀. Impossível ter ${idade} anos.`);
         throw new Error("Idade inválida");
     }
+    else if (idade < 18){
+        alert(`Idade inválida, você e muito novo para ter uma conta epere por mais ${idade} anos`);
+        throw new Error("Idade inválida");
+    }
 }
 
 
@@ -93,12 +97,13 @@ async function cadastro() {
 
     try {
         let api = await fetch(url, {
+            
             method: "POST", // Verifique se o método correto é POST ou PUT
             headers: {
                 'Content-Type': 'application/json',
                 'Cookie': 'gowash_session=0hGqRHf0q38ETNgEcJGce30LcPtuPKo48uKtb7Oj'
             },
-            body: JSON.stringify({
+            body:  JSON.stringify({
                 "name": `${nome.value}`,
                 "email": `${email.value} `,
                 "user_type_id": 1,
@@ -107,9 +112,11 @@ async function cadastro() {
                 "terms": 1,
                 "birthday": `${dateN.value}`
             })
+             
         });
 
         if (api.ok) {
+
             let response = await api.json();
             console.log(response);
             alert(JSON.stringify(response.data));
@@ -118,6 +125,15 @@ async function cadastro() {
             
         } else {
             let responseError = await api.json();
+            // alert(JSON.stringify(responseError)); // mostra a resposta de erro da api
+
+            if (responseError.data.errors.email.includes("The email has already been taken.")) {
+                alert('Esse email já estar cadastrado por uma outra conta');
+            }
+            if (responseError.data.errors.cpf_cnpj.includes("The cpf cnpj has already been taken.")) {
+                alert('Esse CPF já estar cadastrado por uma outra conta');
+            }
+            
             console.log(responseError.data.Erros.cpf_cnpj[0]);
             alert(responseError.data.Erros.cpf_cnpj[0]);
         }

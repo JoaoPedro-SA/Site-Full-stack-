@@ -42,6 +42,7 @@ async function login() {
             window.open('music.html'); 
         } else {
             let responseError = await api.json();
+            alert(JSON.stringify(responseError.data));
             if (responseError.data || responseError.data.Erros || responseError.data.Erros.cpf_cnpj) {
                 console.log(responseError.data.Erros.cpf_cnpj[0]);
                 alert( JSON.stringify(responseError.data.Erros.cpf_cnpj[0]));
@@ -51,6 +52,7 @@ async function login() {
             }
         }
     } catch (error) {
+        alert(error);
         console.error('Erro na requisição:', error);
     }
 }
