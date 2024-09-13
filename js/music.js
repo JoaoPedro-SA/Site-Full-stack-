@@ -69,7 +69,7 @@ cards.forEach(card => {
 //      });
 //  });
 
-
+efeito_music = () =>{
  const audioElements = document.querySelectorAll('audio');
  const canvas = document.getElementById('canvas');
  const ctx = canvas.getContext('2d');
@@ -132,5 +132,5 @@ cards.forEach(card => {
      }
  }
  
-
+}
 
