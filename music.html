@@ -116,6 +116,13 @@
                                    </div>
                                    <audio style="display:none;" class="audio"  controls="controls" loop>
                                         <source src="viw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/mp3">
+                                        <source src="caviw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/mpeg">
+                                        <source src="caminho/paviw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/wav">
+                                        <source src="caminho/paviw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/ogg">
+                                        <source src="caminho/pviw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/aac">
+                                        <source src="caminho/viw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/flac">
+                                        <source src="caminho/viw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/aiff">
+                                        <source src="caminho/pviw/img/Musicas/Pick-Up-Behind-You-_1_.mp3" type="audio/mp4">
                                       </audio> 
                                    </div>
 
@@ -135,132 +142,7 @@
 
      
 
-     <script>const cards = document.querySelectorAll('.button');
-          cards.forEach(card => {
-              card.addEventListener('mouseenter', (e) => {
-                  var DivPai = e.currentTarget.parentElement;
-                  var play = DivPai.querySelector('.button_play');
-                  play.style.display = play.style.display === 'none' ? 'block' : 'none';
-              });
-          
-              card.addEventListener('click', (e) => {
-                  var DivPai = e.currentTarget.parentElement;
-                  var play = DivPai.querySelector('.button_play');
-                  play.style.display = play.style.display === 'none' ? 'block' : 'none';
-              });
-          
-              card.addEventListener('touchstart', (e) => {
-                  var DivPai = e.currentTarget.parentElement;
-                  var play = DivPai.querySelector('.button_play');
-                  play.style.display = play.style.display === 'none' ? 'block' : 'none';
-              });
-          
-              card.addEventListener('mouseleave', (e) => {
-                  var DivPai = e.currentTarget.parentElement;
-                  var play = DivPai.querySelector('.button_play');
-                  play.style.display = play.style.display === 'none' ? 'block' : 'none';
-              });
-          });
-          
-          const fechar_music = () => {
-              const audio = document.querySelectorAll('.audio');
-              audio.forEach(audio => {
-                  audio.style.display = 'none';
-                  audio.pause();
-              });
-          }
-          
-          document.querySelectorAll('.button_play').forEach(button => {
-              button.addEventListener('click', (e) => {
-                  const elementoPai = e.currentTarget.closest('.flex');
-                  const audio = elementoPai.querySelector('.audio');
-                  const canva = document.querySelector('#canvas');
-                  if (audio.style.display === 'none' || audio.style.display === '') {
-                      fechar_music();
-                      audio.style.display = 'block';
-                      canva.style.display = 'block';
-                      audio.play(); // Iniciar a reprodução do áudio
-                  } else {
-                      audio.style.display = 'none';
-                      canva.style.display = 'none';
-                      audio.pause();
-                  }
-              });
-          
-              button.addEventListener('touchstart', (e) => {
-                  const elementoPai = e.currentTarget.closest('.flex');
-                  const audio = elementoPai.querySelector('.audio');
-                  const canva = document.querySelector('#canvas');
-                  if (audio.style.display === 'none' || audio.style.display === '') {
-                      fechar_music();
-                      audio.style.display = 'block';
-                      canva.style.display = 'block';
-                      audio.play(); // Iniciar a reprodução do áudio
-                  } else {
-                      audio.style.display = 'none';
-                      canva.style.display = 'none';
-                      audio.pause();
-                  }
-              });
-          });
-          
-          const audioElements = document.querySelectorAll('audio');
-          const canvas = document.getElementById('canvas');
-          const ctx = canvas.getContext('2d');
-          
-          const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-          const analyser = audioContext.createAnalyser();
-          analyser.fftSize = 256;
-          const bufferLength = analyser.frequencyBinCount;
-          const dataArray = new Uint8Array(bufferLength);
-          
-          audioElements.forEach(audioElement => {
-              const audioSource = audioContext.createMediaElementSource(audioElement);
-              audioSource.connect(analyser);
-              analyser.connect(audioContext.destination);
-          
-              audioElement.addEventListener('play', () => {
-                  draw();
-              });
-          
-              audioElement.addEventListener('pause', () => {
-                  cancelAnimationFrame(draw);
-              });
-          
-              audioElement.addEventListener('ended', () => {
-                  cancelAnimationFrame(draw);
-              });
-          });
-          
-          let hue = 0;
-          
-          function draw() {
-              requestAnimationFrame(draw);
-          
-              analyser.getByteFrequencyData(dataArray);
-              let cor = '0, 0, 0';
-              ctx.fillStyle = `rgba(${cor}, 1)`;
-              ctx.fillRect(0, 0, canvas.width, canvas.height);
-          
-              const barWidth = (canvas.width / bufferLength) * 2.5;
-              let barHeight;
-              let x = 0;
-          
-              for (let i = 0; i < bufferLength; i++) {
-                  barHeight = dataArray[i];
-          
-                  ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
-                  ctx.fillRect(x, canvas.height - barHeight / 1.8, barWidth, barHeight / 1.8);
-          
-                  x += barWidth + 2;
-              }
-          
-              hue += 1;
-              if (hue >= 360) {
-                  hue = 0;
-              }
-          }
-          </script>
+     <script src='js/music.js'></script>
      
 </body>
 </html>

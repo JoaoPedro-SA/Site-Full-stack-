@@ -31,9 +31,9 @@ cards.forEach(card => {
 
 cards.forEach(card => {
      card.addEventListener('mouseleave', (e) => {
-          console.log(e.currentTarget);
+        //   console.log(e.currentTarget);
           var DivPai = e.currentTarget.parentElement;
-          console.log(DivPai);
+        //   console.log(DivPai);
           var play = DivPai.querySelector('.button_play');
           if (play.style.display === 'none'){
                play.style.display = 'block';
@@ -48,7 +48,7 @@ fechar_music = () => {
 const audio = document.querySelectorAll('.audio');
 audio.forEach(audio => {
      audio.style.display = 'none';
-     audio.pause();
+     
  });
 }
 
