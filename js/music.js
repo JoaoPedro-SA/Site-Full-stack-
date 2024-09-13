@@ -119,10 +119,17 @@ document.querySelectorAll('.button_play').forEach(button => {
  }
  
 
-const audio = document.querySelectorAll('.audio');
-audio.forEach(audio => {
-    audio.addEventListener('play', () => {
-        audio.play();
-    });
+// const audio = document.querySelectorAll('.audio');
+// audio.forEach(audio => {
+//     audio.addEventListener('play', () => {
+//         audio.play();
+//     });
+    
+// })
 
-})
+// audio.forEach(audio => {
+//     audio.addEventListener('touchstart', () => {
+//         audio.play();
+//     });
+    
+// })
