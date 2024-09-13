@@ -70,6 +70,7 @@ document.querySelectorAll('.button_play').forEach(button => {
  });
 
 
+ document.addEventListener('DOMContentLoaded', () => {
     const audioElements = document.querySelectorAll('audio');
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -130,6 +131,6 @@ document.querySelectorAll('.button_play').forEach(button => {
             hue = 0;
         }
     }
-
+});
 
 
