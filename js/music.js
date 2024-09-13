@@ -61,6 +61,7 @@ document.querySelectorAll('.button_play').forEach(button => {
              fechar_music();
              audio.style.display = 'block';
              canva.style.display = 'block'
+             audio.play();
          } else {
              audio.style.display = 'none';
              canva.style.display = 'none'
