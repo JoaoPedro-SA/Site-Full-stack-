@@ -68,7 +68,8 @@ function changeBackgroundColor() {
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
     body2.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    
 }
 
-setInterval(changeBackgroundColor, 3000); 
+setInterval(changeBackgroundColor, 5000); 
 

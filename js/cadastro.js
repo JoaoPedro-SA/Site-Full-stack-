@@ -154,7 +154,7 @@ function changeBackgroundColor() {
     body2.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
-setInterval(changeBackgroundColor, 3000); 
+setInterval(changeBackgroundColor, 5000); 
 
 
 

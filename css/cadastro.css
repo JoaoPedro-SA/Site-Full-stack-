@@ -51,6 +51,72 @@ nav{
     flex-direction: column;    
     column-gap: 10px;
     background-color: aliceblue;
+    width: 700px;
+    min-width:200px ;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 20px;
+    border: 0.3rem solid black;
+}
+
+label{
+    font-weight: bold;
+    font-size: 35px;
+}
+.flex{
+    margin-bottom: 5%;
+}
+
+.button{
+    width: 90%;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.button:hover{
+    transition: 1s;
+    font-size: 40px;
+    
+}
+
+h2 {
+    font-size: 50px;
+    border-bottom: 2px solid black;
+}
+
+.input{
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    width: 300px;
+    height: 30px;
+    
+    
+}
+
+.input:focus{
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
+.link_cadastro{
+    color: black;
+    text-wrap: nowrap;
+}
+
+.link_cadastro:hover{
+    color: rgb(255, 0, 0);
+}
+
+@media only screen and (max-width: 1400px){
+    
+.form{
+    text-align: center;
+    justify-content: center;
+    display: flex ;
+    flex-direction: column;    
+    column-gap: 10px;
+    background-color:aliceblue;
     width: 100%;
     min-width:200px ;
     height: 100%;
@@ -72,6 +138,7 @@ label{
     border-radius: 20px;
     background-color: transparent;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 .button:hover{
     transition: 1s;
@@ -81,4 +148,27 @@ label{
 
 h2 {
     font-size: 30px;
+    border-bottom: 2px solid black;
+}
+
+.input{
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    width:auto;
+    height: auto;
+}
+
+.input:focus{
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
+.link_cadastro{
+    color: black;
+    text-wrap: nowrap;
+}
+
+.link_cadastro:hover{
+    color: rgb(255, 0, 0);
+}
 }
