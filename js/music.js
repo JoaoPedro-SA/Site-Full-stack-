@@ -1,9 +1,9 @@
 const cards = document.querySelectorAll('.button');
 cards.forEach(card => {
      card.addEventListener('mouseenter', (e) => {
-          console.log(e.currentTarget);
+        //   console.log(e.currentTarget);
           var DivPai = e.currentTarget.parentElement;
-          console.log(DivPai);
+        //   console.log(DivPai);
           var play = DivPai.querySelector('.button_play');
           if (play.style.display === 'none'){
                play.style.display = 'block';
@@ -12,6 +12,20 @@ cards.forEach(card => {
                play.style.display = 'none';
           }
      });
+
+     card.addEventListener('click', (e) => {
+        // console.log(e.currentTarget);
+        var DivPai = e.currentTarget.parentElement;
+        // console.log(DivPai);
+        var play = DivPai.querySelector('.button_play');
+        if (play.style.display === 'none'){
+             play.style.display = 'block';
+        }
+        else {
+             play.style.display = 'none';
+        }
+   });
+
 });
 
 
@@ -119,17 +133,4 @@ document.querySelectorAll('.button_play').forEach(button => {
  }
  
 
-// const audio = document.querySelectorAll('.audio');
-// audio.forEach(audio => {
-//     audio.addEventListener('play', () => {
-//         audio.play();
-//     });
-    
-// })
 
-// audio.forEach(audio => {
-//     audio.addEventListener('touchstart', () => {
-//         audio.play();
-//     });
-    
-// })
