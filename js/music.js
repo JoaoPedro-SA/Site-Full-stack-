@@ -69,7 +69,7 @@ document.querySelectorAll('.button_play').forEach(button => {
      });
  });
 
-efeito_music = () => {
+
     const audioElements = document.querySelectorAll('audio');
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -130,6 +130,6 @@ efeito_music = () => {
             hue = 0;
         }
     }
-}
-efeito_music();
+
+
 
