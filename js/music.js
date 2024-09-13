@@ -29,45 +29,45 @@ cards.forEach(card => {
 });
 
 
-cards.forEach(card => {
-     card.addEventListener('mouseleave', (e) => {
-        //   console.log(e.currentTarget);
-          var DivPai = e.currentTarget.parentElement;
-        //   console.log(DivPai);
-          var play = DivPai.querySelector('.button_play');
-          if (play.style.display === 'none'){
-               play.style.display = 'block';
-          }
-          else {
-               play.style.display = 'none';
-          }
-     });
-});
+// cards.forEach(card => {
+//      card.addEventListener('mouseleave', (e) => {
+//         //   console.log(e.currentTarget);
+//           var DivPai = e.currentTarget.parentElement;
+//         //   console.log(DivPai);
+//           var play = DivPai.querySelector('.button_play');
+//           if (play.style.display === 'none'){
+//                play.style.display = 'block';
+//           }
+//           else {
+//                play.style.display = 'none';
+//           }
+//      });
+// });
 
-fechar_music = () => {
-const audio = document.querySelectorAll('.audio');
-audio.forEach(audio => {
-     audio.style.display = 'none';
+// fechar_music = () => {
+// const audio = document.querySelectorAll('.audio');
+// audio.forEach(audio => {
+//      audio.style.display = 'none';
      
- });
-}
+//  });
+// }
 
-document.querySelectorAll('.button_play').forEach(button => {
-     button.addEventListener('click', (e) => {
-         const elementoPai = e.currentTarget.closest('.flex');
-         const audio = elementoPai.querySelector('.audio');
-         const canva = document.querySelector('#canvas');
-         if (audio.style.display === 'none' || audio.style.display === '') {
-             fechar_music();
-             audio.style.display = 'block';
-             canva.style.display = 'block'
-         } else {
-             audio.style.display = 'none';
-             canva.style.display = 'none'
-             audio.pause();
-         }
-     });
- });
+// document.querySelectorAll('.button_play').forEach(button => {
+//      button.addEventListener('click', (e) => {
+//          const elementoPai = e.currentTarget.closest('.flex');
+//          const audio = elementoPai.querySelector('.audio');
+//          const canva = document.querySelector('#canvas');
+//          if (audio.style.display === 'none' || audio.style.display === '') {
+//              fechar_music();
+//              audio.style.display = 'block';
+//              canva.style.display = 'block'
+//          } else {
+//              audio.style.display = 'none';
+//              canva.style.display = 'none'
+//              audio.pause();
+//          }
+//      });
+//  });
 
 
  const audioElements = document.querySelectorAll('audio');
