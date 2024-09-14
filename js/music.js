@@ -1,3 +1,15 @@
+fechar_buttons = () => {
+    const audio = document.querySelectorAll('.button_play');
+    audio.forEach(audio => {
+         audio.style.display = 'none';
+         audio.pause();
+        
+         
+     });
+    }
+
+
+
 const cards = document.querySelectorAll('.button');
 cards.forEach(card => {
      card.addEventListener('mouseenter', (e) => {
@@ -21,6 +33,7 @@ card.addEventListener('click', (e) => {
     var DivPai = e.currentTarget.parentElement;
     // console.log(DivPai);
     var play = DivPai.querySelector('.button_play');
+    fechar_buttons();
     if (play.style.display === 'none'){
          play.style.display = 'block';
     }
@@ -49,6 +62,8 @@ fechar_music = () => {
 const audio = document.querySelectorAll('.audio');
 audio.forEach(audio => {
      audio.style.display = 'none';
+     audio.pause();
+    
      
  });
 }
@@ -114,7 +129,7 @@ document.querySelectorAll('.button_play').forEach(button => {
         ctx.fillStyle = 'rgba(0, 0, 0, 1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        const barWidth = (canvas.width / bufferLength) * 2.5;
+        const barWidth = (canvas.width / bufferLength) * 1.5;
         let barHeight;
         let x = 0;
 
