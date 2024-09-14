@@ -77,17 +77,17 @@ if (!termo.checked){
 
 
 
-    let ok = await confirm(
-        `
-       NOME: ${nome.value}
-       EMAIL: ${email.value}
-       SENHA: ${senha.value}
-       CPF OU CNPJ: ${CPF_CNPJ.value}
-       DATA DE NACIMENTO: ${dateN.value}
-       TERMO: ${termo.value}
-        `       
-
-    );
+    // let ok = await confirm(
+    //     `
+    // ||  Confirme seus dados ||
+    //    NOME: ${nome.value}
+    //    EMAIL: ${email.value}
+    //    SENHA: ${senha.value}
+    //    CPF OU CNPJ: ${CPF_CNPJ.value}
+    //    DATA DE NACIMENTO: ${dateN.value}
+    //    TERMO: ${termo.value}
+    //     `       
+    // );
 
     
 const url = 'https://go-wash-api.onrender.com/api/user';
@@ -121,7 +121,7 @@ async function cadastro() {
             console.log(response);
             alert(JSON.stringify(response.data));
             alert('Confirmou email do cadastro?');    
-            window.open('login.html');
+            window.location.href = 'login.html';
             
         } else {
             let responseError = await api.json();

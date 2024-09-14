@@ -3,14 +3,14 @@ const senha = document.querySelector('#password');
 let button_salva = document.querySelector('.button');
 
 button_salva.addEventListener('click', async () => {
-     let ok = await confirm(
+    //  let ok = await confirm(
 
-        `
-        EMAIL: ${email.value}
-        SENHA: ${senha.value} 
-        `  
+    //     `
+    //     EMAIL: ${email.value}
+    //     SENHA: ${senha.value} 
+    //     `  
  
-     );
+    //  );
 
 const url = 'https://go-wash-api.onrender.com/api/login';
 console.log(url);
@@ -35,14 +35,14 @@ async function login() {
         if (api.ok) {
             let response = await api.json();
             console.log(response); 
-            alert( JSON.stringify(response));
+            // alert( JSON.stringify(response));
             alert(`
                 Bem Vindo ${response.user.name}
                 `)   
-            window.open('music.html'); 
+                window.location.href = 'music.html';
         } else {
             let responseError = await api.json();
-            alert(JSON.stringify(responseError.data));
+            alert(JSON.stringify(responseError.data.errors));
             if (responseError.data || responseError.data.Erros || responseError.data.Erros.cpf_cnpj) {
                 console.log(responseError.data.Erros.cpf_cnpj[0]);
                 alert( JSON.stringify(responseError.data.Erros.cpf_cnpj[0]));
