@@ -13,21 +13,22 @@ cards.forEach(card => {
           }
      });
 
-     card.addEventListener('click', (e) => {
-        // console.log(e.currentTarget);
-        var DivPai = e.currentTarget.parentElement;
-        // console.log(DivPai);
-        var play = DivPai.querySelector('.button_play');
-        if (play.style.display === 'none'){
-             play.style.display = 'block';
-        }
-        else {
-             play.style.display = 'none';
-        }
-   });
-
 });
 
+cards.forEach(card => {
+card.addEventListener('click', (e) => {
+    // console.log(e.currentTarget);
+    var DivPai = e.currentTarget.parentElement;
+    // console.log(DivPai);
+    var play = DivPai.querySelector('.button_play');
+    if (play.style.display === 'none'){
+         play.style.display = 'block';
+    }
+    else {
+         play.style.display = 'none';
+    }
+});
+});
 
 cards.forEach(card => {
      card.addEventListener('mouseleave', (e) => {
