@@ -11,6 +11,14 @@ button_salva.addEventListener('click', async () => {
     //     `  
  
     //  );
+    
+    if ((email.value === "" || email.value === null || email.value === undefined ) 
+            ||
+        (senha.value === "" || senha.value === null || senha.value === undefined )){
+            alert('Os valores não pode ser vazios');
+            throw new Error('Erro');
+        }
+
 
 const url = 'https://go-wash-api.onrender.com/api/login';
 console.log(url);
@@ -64,12 +72,14 @@ let ok3 = await login();
 
 function changeBackgroundColor() {
     const body2 = document.querySelector('.body2');
+    const form = document.querySelector('.form');
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-    body2.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    
+    // form.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    form.style.boxShadow = `0px 20px 200px 30px rgb(${r}, ${g}, ${b})`
+
 }
 
-setInterval(changeBackgroundColor, 5000); 
+setInterval(changeBackgroundColor, 1000); 
 

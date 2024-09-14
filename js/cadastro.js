@@ -55,6 +55,13 @@ const valida_dataN = (data) => {
     }
 }
 
+const validar_senha = (senha) => {
+    if (senha.length < 7){
+            alert(`A senha tem que ter no minimo 7 caracteres`);
+            throw new Error("Senha inválida");
+        }
+} 
+
 
 button_salva.addEventListener('click', async () => {
 
@@ -68,6 +75,7 @@ button_salva.addEventListener('click', async () => {
 
     valida_email(email.value);
     valida_dataN(dateN.value);
+    validar_senha(senha.value);
 
     
 if (!termo.checked){
@@ -148,13 +156,18 @@ let ok3 = await cadastro();
 
 function changeBackgroundColor() {
     const body2 = document.querySelector('.body2');
+    const form = document.querySelector('.form');
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-    body2.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    // form.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    form.style.boxShadow = `0px 0px 200px 20px rgb(${r}, ${g}, ${b})`
+    console.log('  ')
+
 }
 
-setInterval(changeBackgroundColor, 5000); 
+setInterval(changeBackgroundColor, 1000); 
+
 
 
 

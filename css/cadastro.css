@@ -57,6 +57,7 @@ nav{
     min-height: 200px;
     border-radius: 20px;
     border: 0.3rem solid black;
+    
 }
 
 label{
@@ -83,6 +84,8 @@ label{
 h2 {
     font-size: 50px;
     border-bottom: 2px solid black;
+
+    
 }
 
 .input{
@@ -170,5 +173,6 @@ h2 {
 
 .link_cadastro:hover{
     color: rgb(255, 0, 0);
+
 }
 }
