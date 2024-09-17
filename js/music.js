@@ -1,92 +1,114 @@
 fechar_buttons = () => {
     const audio = document.querySelectorAll('.button_play');
     audio.forEach(audio => {
-         audio.style.display = 'none';
-         audio.pause();
-        
-         
-     });
-    }
+        audio.style.display = 'none';
+        audio.pause();
+
+
+    });
+}
 
 
 
 const cards = document.querySelectorAll('.button');
 cards.forEach(card => {
-     card.addEventListener('mouseenter', (e) => {
+    card.addEventListener('mouseenter', (e) => {
         //   console.log(e.currentTarget);
-          var DivPai = e.currentTarget.parentElement;
+        var DivPai = e.currentTarget.parentElement;
         //   console.log(DivPai);
-          var play = DivPai.querySelector('.button_play');
-          if (play.style.display === 'none'){
-               play.style.display = 'block';
-          }
-          else {
-               play.style.display = 'none';
-          }
-     });
+        var play = DivPai.querySelector('.button_play');
+        if (play.style.display === 'none') {
+            play.style.display = 'block';
+        }
+        else {
+            play.style.display = 'none';
+        }
+    });
 
 });
 
 cards.forEach(card => {
-card.addEventListener('click', (e) => {
-    // console.log(e.currentTarget);
-    var DivPai = e.currentTarget.parentElement;
-    // console.log(DivPai);
-    var play = DivPai.querySelector('.button_play');
-    fechar_buttons();
-    if (play.style.display === 'none'){
-         play.style.display = 'block';
-    }
-    else {
-         play.style.display = 'none';
-    }
-});
+    card.addEventListener('click', (e) => {
+        // console.log(e.currentTarget);
+        var DivPai = e.currentTarget.parentElement;
+        // console.log(DivPai);
+        var play = DivPai.querySelector('.button_play');
+        fechar_buttons();
+        if (play.style.display === 'none') {
+            play.style.display = 'block';
+        }
+        else {
+            play.style.display = 'none';
+        }
+    });
 });
 
 cards.forEach(card => {
-     card.addEventListener('mouseleave', (e) => {
+    card.addEventListener('mouseleave', (e) => {
         //   console.log(e.currentTarget);
-          var DivPai = e.currentTarget.parentElement;
+        var DivPai = e.currentTarget.parentElement;
         //   console.log(DivPai);
-          var play = DivPai.querySelector('.button_play');
-          if (play.style.display === 'none'){
-               play.style.display = 'block';
-          }
-          else {
-               play.style.display = 'none';
-          }
-     });
+        var play = DivPai.querySelector('.button_play');
+        if (play.style.display === 'none') {
+            play.style.display = 'block';
+        }
+        else {
+            play.style.display = 'none';
+        }
+    });
 });
 
 fechar_music = () => {
-const audio = document.querySelectorAll('.audio');
-audio.forEach(audio => {
-     audio.style.display = 'none';
-     audio.pause();
-    
-     
- });
+    const audio = document.querySelectorAll('.audio');
+    audio.forEach(audio => {
+        audio.style.display = 'none';
+        audio.pause();
+
+
+    });
 }
 
 document.querySelectorAll('.button_play').forEach(button => {
-     button.addEventListener('click', (e) => {
-         const elementoPai = e.currentTarget.closest('.flex');
-         const audio = elementoPai.querySelector('.audio');
-         const canva = document.querySelector('#canvas');
-         if (audio.style.display === 'none' || audio.style.display === '') {
-             fechar_music();
-             audio.style.display = 'block';
-             canva.style.display = 'block'
-         } else {
-             audio.style.display = 'none';
-             canva.style.display = 'none'
-             audio.pause();
-         }
-     });
- });
+    button.addEventListener('click', (e) => {
+        const elementoPai = e.currentTarget.closest('.flex');
+        const audio = elementoPai.querySelector('.audio');
+        const canva = document.querySelector('#canvas');
+        if (audio.style.display === 'none' || audio.style.display === '') {
+            fechar_music();
+            audio.style.display = 'block';
+            canva.style.display = 'block'
+        } else {
+            audio.style.display = 'none';
+            canva.style.display = 'none'
+            audio.pause();
+        }
+    });
+});
+
+msg_sair = () => {
+    const links = document.querySelectorAll('.link');
+    links.forEach(link => {
+        link.addEventListener('click', sai = async (e) => {
+            let ok = await confirm(
+                `
+                Deseja realmente sair?
+                `
+            );
+            if (!ok) {
+                e.preventDefault()
+            }
 
 
- document.addEventListener('DOMContentLoaded', () => {
+        });
+
+    });
+
+}
+
+msg_sair();
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const audioElements = document.querySelectorAll('audio');
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
