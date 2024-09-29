@@ -140,4 +140,3 @@ button_salva.addEventListener("click", async () => {
     let ok3 = await cadastro();
 });
 
-
