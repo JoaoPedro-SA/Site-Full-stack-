@@ -1,3 +1,5 @@
+
+
 let nome = document.querySelector("#name");
 let email = document.querySelector("#email");
 let senha = document.querySelector("#password");
@@ -31,13 +33,14 @@ valida_email = (email) => {
             break;
         }
     }
-    if (e_um_email === false) {
+    if (!e_um_email) {
         alert(`colocar um email valido`);
         throw new Error(`preencher todos os campos`);
     }
 };
 
-const valida_dataN = (data) => {
+
+valida_dataN = (data) => {
     let anoNascimento = data.slice(0, 4); // Extrai os primeiros 4 caracteres
     let idade = 2024 - parseInt(anoNascimento); // Converte para número e calcula a idade
     if (idade > 120) {
@@ -53,7 +56,7 @@ const valida_dataN = (data) => {
     }
 };
 
-const validar_senha = (senha) => {
+validar_senha = (senha) => {
     if (senha.length < 7) {
         alert(`A senha tem que ter no minimo 7 caracteres`);
         throw new Error("Senha inválida");
@@ -78,17 +81,6 @@ button_salva.addEventListener("click", async () => {
         throw new Error("Encerrando o código forçadamente");
     }
 
-    // let ok = await confirm(
-    //     `
-    // ||  Confirme seus dados ||
-    //    NOME: ${nome.value}
-    //    EMAIL: ${email.value}
-    //    SENHA: ${senha.value}
-    //    CPF OU CNPJ: ${CPF_CNPJ.value}
-    //    DATA DE NACIMENTO: ${dateN.value}
-    //    TERMO: ${termo.value}
-    //     `
-    // );
 
     const url = "https://go-wash-api.onrender.com/api/user";
     console.log(url);
@@ -96,7 +88,7 @@ button_salva.addEventListener("click", async () => {
     async function cadastro() {
         try {
             let api = await fetch(url, {
-                method: "POST", // Verifique se o método correto é POST ou PUT
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Cookie: "gowash_session=0hGqRHf0q38ETNgEcJGce30LcPtuPKo48uKtb7Oj",
@@ -148,14 +140,4 @@ button_salva.addEventListener("click", async () => {
     let ok3 = await cadastro();
 });
 
-function changeBackgroundColor() {
-    const body2 = document.querySelector(".body2");
-    const form = document.querySelector(".form");
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    // form.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    form.style.boxShadow = `0px 0px 200px 20px rgb(${r}, ${g}, ${b})`;
-}
 
-setInterval(changeBackgroundColor, 1000);
