@@ -1,11 +1,11 @@
-body{
+body {
      overflow-x: hidden;
      padding: 0%;
      margin: 0%;
-     
+
 }
 
-nav{
+nav {
      background-color: rgb(27, 27, 27);
      color: white;
      height: 4rem;
@@ -16,11 +16,13 @@ nav{
      padding-right: 2%;
      border-bottom: 2px solid white;
      min-width: 100%;
-     
+     text-wrap: nowrap;
+     overflow-x: auto;
+
 
 }
 
-.link{
+.link {
      color: white;
      outline: 0;
      border: 0;
@@ -28,16 +30,25 @@ nav{
      border: 2px solid white;
      padding: 10px;
      border-radius: 20px;
-     width:100px;
+     width: 100px;
      text-align: center;
      font-size: 17px;
+     min-width: fit-content;
 }
 
-.link:hover{
+.link:hover {
      color: red;
 }
 
-.corpo{
+.fundo_usuario {
+     width: 100%;
+     text-wrap: nowrap;
+     display: flex;
+     gap: 10px;
+     padding-left: 20px;
+}
+
+.corpo {
 
      /* background-color: rgb(10, 19, 95); */
      width: 100%;
@@ -49,13 +60,15 @@ nav{
      display: flex;
      flex-wrap: wrap;
      gap: 30px;
-     background-image: url("https://i.pinimg.com/originals/f0/b7/db/f0b7db8e10f6be51992df5e07d456109.gif");
+     /* background-image: url("https://i.pinimg.com/originals/f0/b7/db/f0b7db8e10f6be51992df5e07d456109.gif"); */
+     background-color: rgb(1, 1, 100);
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
      justify-content: center;
 }
-.button{
+
+.button {
      display: block;
      background-color: aliceblue;
      width: fit-content;
@@ -67,19 +80,19 @@ nav{
      align-content: center;
      align-self: center;
      padding: 10px;
-     padding-bottom: 0px ;
-     
-     
-     
+     padding-bottom: 0px;
+
+
+
 }
 
-.img_music{
+.img_music {
      height: 200px;
      width: 200px;
 
 }
 
-.button_play{
+.button_play {
      position: relative;
      background: none;
      outline: none;
@@ -88,10 +101,10 @@ nav{
      left: 120px;
      justify-content: left;
      text-align: left;
-     
+
 }
 
-#button_img{
+#button_img {
      height: 50px;
      width: 50px;
      background-color: rgb(0, 0, 0);
@@ -100,11 +113,11 @@ nav{
 
 }
 
-.nome{
+.nome {
      width: 200px
 }
 
-.audio{
+.audio {
      position: fixed;
      bottom: 0%;
      left: 5%;
@@ -114,8 +127,9 @@ nav{
      text-align: center;
      z-index: 1;
      border-radius: 30px;
-     
+
 }
+
 .fixo-inferior {
      position: fixed;
      bottom: 0rem;
@@ -125,9 +139,9 @@ nav{
      text-align: center;
      padding: 10px;
      z-index: 0;
- }
+}
 
- #canvas{
+#canvas {
      position: fixed;
      bottom: 0rem;
      left: 5%;
@@ -139,29 +153,36 @@ nav{
      height: 130px;
      border: 2px solid white;
      border-radius: 30px;
-     
- }
 
- audio::-webkit-media-controls-panel {
-     background-color: #444444; /* Cor de fundo */
+}
+
+audio::-webkit-media-controls-panel {
+     background-color: #444444;
+     /* Cor de fundo */
      color: white;
 
- }
+}
 
- audio::-webkit-media-controls-panel {
-     background-color: #fafafa; /* Cor de fundo do painel */
- }
- /* Estilizando o botão de play/pause */
- audio::-webkit-media-controls-play-button {
-     background-color: #ffffff; /* Cor do botão de play/pause */
- }
- /* Estilizando o controle de volume */
- audio::-webkit-media-controls-volume-slider {
-     background-color: #ffffff; /* Cor do controle de volume */
+audio::-webkit-media-controls-panel {
+     background-color: #fafafa;
+     /* Cor de fundo do painel */
+}
+
+/* Estilizando o botão de play/pause */
+audio::-webkit-media-controls-play-button {
+     background-color: #ffffff;
+     /* Cor do botão de play/pause */
+}
+
+/* Estilizando o controle de volume */
+audio::-webkit-media-controls-volume-slider {
+     background-color: #ffffff;
+     /* Cor do controle de volume */
      flood-color: white;
- }
- /* Estilizando a barra de progresso */
- audio::-webkit-media-controls-timeline {
-     background-color: #ffffff; /* Cor da barra de progresso */
- }
+}
 
+/* Estilizando a barra de progresso */
+audio::-webkit-media-controls-timeline {
+     background-color: #ffffff;
+     /* Cor da barra de progresso */
+}

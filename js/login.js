@@ -2,6 +2,12 @@ const email = document.querySelector('#email');
 const senha = document.querySelector('#password');
 let button_salva = document.querySelector('.button');
 
+salvaDados = (login) => {
+    localStorage.setItem("usuario", JSON.stringify(login));
+    alert('Login salvo com sucesso!');
+
+}
+
 button_salva.addEventListener('click', async () => {
 
     if ((email.value === "" || email.value === null || email.value === undefined)
@@ -36,6 +42,7 @@ button_salva.addEventListener('click', async () => {
             if (api.ok) {
                 let response = await api.json();
                 console.log(response);
+                salvaDados(response);
                 // alert( JSON.stringify(response));
                 alert(`
                 Bem Vindo ${response.user.name}

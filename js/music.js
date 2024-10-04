@@ -4,11 +4,8 @@ fechar_buttons = () => {
         audio.style.display = 'none';
         audio.pause();
 
-
     });
 }
-
-
 
 const cards = document.querySelectorAll('.button');
 cards.forEach(card => {
@@ -64,9 +61,18 @@ fechar_music = () => {
         audio.style.display = 'none';
         audio.pause();
 
-
     });
 }
+
+
+pegaNomeDeUsuario = () => {
+    let usuario = localStorage.getItem("usuario");
+    usuario = JSON.parse(usuario)
+    let elementoUsuario = document.querySelector(".usuario");
+    elementoUsuario.textContent = usuario.user.name;
+}
+
+pegaNomeDeUsuario();
 
 document.querySelectorAll('.button_play').forEach(button => {
     button.addEventListener('click', (e) => {
@@ -97,16 +103,11 @@ msg_sair = () => {
             if (!ok) {
                 e.preventDefault()
             }
-
-
         });
-
     });
-
 }
 
 msg_sair();
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const audioElements = document.querySelectorAll('audio');
@@ -170,5 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
 
 
