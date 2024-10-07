@@ -63,6 +63,8 @@ validar_senha = (senha) => {
     }
 };
 
+
+
 button_salva.addEventListener("click", async () => {
     valida_valor_nulo(nome.value);
     valida_valor_nulo(email.value);
