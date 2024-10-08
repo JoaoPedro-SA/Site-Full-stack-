@@ -35,13 +35,17 @@ nav {
 
 
 .body2 {
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     margin: 0;
     height: 100vh;
     transition: background-color 3s ease;
     justify-content: center;
     align-items: center;
+    background-image: url("Imagem\ do\ WhatsApp\ de\ 2024-10-07\ à\(s\)\ 21.22.22_ba096260.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -65,13 +69,13 @@ nav {
     flex-direction: column;
     column-gap: 10px;
     background-color: aliceblue;
-    width: 700px;
+    width: 400px;
     min-width: 200px;
     height: 100%;
     min-height: 200px;
-    border-radius: 20px;
-    border: 0.3rem solid black;
+
 }
+
 
 label {
     font-weight: bold;
@@ -83,36 +87,41 @@ label {
 }
 
 .button {
-    width: 90%;
-    border-radius: 20px;
-    background-color: transparent;
+    width: 60%;
+    background-color: black;
     font-size: 20px;
     margin-bottom: 20px;
+    padding: 10px;
+    color: white;
+    transition: 1s;
 }
 
 .button:hover {
     transition: 1s;
-    font-size: 40px;
+    font-size: 25px;
 
 }
 
 h2 {
     font-size: 50px;
     border-bottom: 2px solid black;
+    font-family: 'Times New Roman', Times, serif
 }
 
 .input {
     border: 0;
     outline: 0;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
     width: 300px;
     height: 30px;
-
+    min-height: fit-content;
+    text-align: center;
+    font-size: 20px;
 
 }
 
 .input:focus {
-    border-bottom: 2px solid rgb(255, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
 }
 
 .link_cadastro {
@@ -137,8 +146,7 @@ h2 {
         min-width: 200px;
         height: 100%;
         min-height: 200px;
-        border-radius: 20px;
-        border: 0.3rem solid black;
+
     }
 
     label {
@@ -151,9 +159,8 @@ h2 {
     }
 
     .button {
-        width: 90%;
-        border-radius: 20px;
-        background-color: transparent;
+
+
         font-size: 15px;
         margin-bottom: 20px;
     }
@@ -172,13 +179,14 @@ h2 {
     .input {
         border: 0;
         outline: 0;
-        border-bottom: 2px solid black;
-        width: auto;
-        height: auto;
+        border: 2px solid black;
+        font-size: 20px;
+        width: 80%;
+
     }
 
     .input:focus {
-        border-bottom: 2px solid rgb(255, 0, 0);
+        border: 2px solid rgb(255, 0, 0);
     }
 
     .link_cadastro {
